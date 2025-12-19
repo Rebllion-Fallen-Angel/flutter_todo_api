@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'api.dart';
 import 'register.dart';
-import 'todo.dart';
+import 'showTodo.dart';
 
 
 class LoginScreen extends StatelessWidget {
@@ -14,7 +13,7 @@ class LoginScreen extends StatelessWidget {
     final passCtrl = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Login")),
+      appBar: AppBar(title: const Text("Login"), centerTitle: true,),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -29,7 +28,7 @@ class LoginScreen extends StatelessWidget {
                 if (ok) {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (_) => const TodoScreen()),
+                    MaterialPageRoute(builder: (_) => const ShowTodoScreen(todo: {},)),
                   );
                 }
               },
@@ -47,3 +46,4 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
